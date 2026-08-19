@@ -2,6 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   reporter: 'html',
+  retries: process.env.CI ? 2 : 0,
+  use: {
+    trace: 'on-first-retry',
+  },
 
   projects: [
     {
@@ -15,6 +19,8 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://demoqa.com',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
       },
     },
   ],
