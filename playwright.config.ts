@@ -6,12 +6,12 @@ export default defineConfig({
   projects: [
     {
       name: 'api',
-      testDir: './tests/api',
+      testDir: './tests/api/specs',
       use: { baseURL: 'https://restful-booker.herokuapp.com' },
     },
     {
       name: 'ui',
-      testDir: './tests/ui',
+      testDir: './tests/ui/specs',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://demoqa.com',

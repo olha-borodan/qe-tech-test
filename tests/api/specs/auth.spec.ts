@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
-
-// These credentials are publicly available.
-const CREDENTIALS = { username: 'admin', password: 'password123' };
+import { CREDENTIALS } from '../client/auth';
 
 test('valid credentials return a token', async ({ request }) => {
   const response = await request.post('/auth', {
