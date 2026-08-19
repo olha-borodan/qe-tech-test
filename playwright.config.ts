@@ -6,7 +6,7 @@ export default defineConfig({
   projects: [
     {
       name: 'api',
-      testDir: './tests/api/specs',
+      testDir: './api/tests',
       use: { baseURL: 'https://restful-booker.herokuapp.com' },
     },
     {
