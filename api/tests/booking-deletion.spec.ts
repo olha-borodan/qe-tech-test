@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/api-fixtures';
-import { VALID_BOOKING } from '../data/booking-data';
+import { VALID_BOOKING } from '../data/booking';
 import { TEST_CREDENTIALS } from '../data/credentials';
 
 test.describe('Booking deletion', () => {

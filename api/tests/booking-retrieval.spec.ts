@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/api-fixtures';
-import { VALID_BOOKING } from '../data/booking-data';
+import { VALID_BOOKING } from '../data/booking';
 
 test.describe('Booking retrieval', () => {
   test('created booking can be retrieved by id', async ({ bookingClient }) => {

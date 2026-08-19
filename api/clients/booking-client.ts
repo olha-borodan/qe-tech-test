@@ -1,13 +1,5 @@
 import { APIRequestContext } from '@playwright/test';
-
-export type Booking = {
-  firstname: string;
-  lastname: string;
-  totalprice: number;
-  depositpaid: boolean;
-  bookingdates: { checkin: string; checkout: string };
-  additionalneeds?: string;
-};
+import { Booking } from '../types/booking';
 
 export class BookingClient {
   constructor(private readonly request: APIRequestContext) {}

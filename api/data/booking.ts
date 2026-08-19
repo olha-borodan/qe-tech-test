@@ -1,4 +1,4 @@
-import { Booking } from '../clients/booking-client';
+import { Booking } from '../types/booking';
 
 export const VALID_BOOKING: Booking = {
   firstname: 'John',

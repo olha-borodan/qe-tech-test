@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/api-fixtures';
-import { Booking } from '../clients/booking-client';
-import { VALID_BOOKING, BOOKING_MISSING_FIRSTNAME } from '../data/booking-data';
+import { Booking } from '../types/booking';
+import { VALID_BOOKING, BOOKING_MISSING_FIRSTNAME } from '../data/booking';
 
 test.describe('Booking creation', () => {
   test('creating a booking returns the booking', async ({ bookingClient }) => {
