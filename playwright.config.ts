@@ -11,7 +11,7 @@ export default defineConfig({
     },
     {
       name: 'ui',
-      testDir: './tests/ui/specs',
+      testDir: './ui/tests',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://demoqa.com',
