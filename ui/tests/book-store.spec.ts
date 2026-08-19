@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/page-fixtures';
-import { menuData } from '../data/books';
+import { bookStoreData } from '../data/book-store-data';
 
 test.describe('Book Store - Landing Page', () => {
   test.beforeEach(async ({ bookStorePage }) => {
@@ -14,7 +14,7 @@ test.describe('Book Store - Landing Page', () => {
   });
 
   test('main menu items are visible', async ({ bookStorePage }) => {
-    for (const item of menuData.menuItems) {
+    for (const item of bookStoreData.menuItems) {
       await expect(
         bookStorePage.getMenuItemLocator(item),
         `menu item "${item}" should be visible`,
@@ -29,20 +29,20 @@ test.describe('Book Store - Search', () => {
   });
 
   test('search returns results for a valid term', async ({ bookStorePage }) => {
-    await bookStorePage.search(menuData.search.validTerm);
+    await bookStorePage.search(bookStoreData.search.validTerm);
 
     await expect(
       bookStorePage.bookCells.first(),
       'search should return at least one result',
     ).toBeVisible();
     await expect(
-      bookStorePage.getBookLink(menuData.search.expectedResult),
+      bookStorePage.getBookLink(bookStoreData.search.expectedResult),
       'expected book should appear in search results',
     ).toBeVisible();
   });
 
   test('search returns no results for an invalid term', async ({ bookStorePage }) => {
-    await bookStorePage.search(menuData.search.invalidTerm);
+    await bookStorePage.search(bookStoreData.search.invalidTerm);
 
     await expect(
       bookStorePage.bookCells,
@@ -53,7 +53,7 @@ test.describe('Book Store - Search', () => {
   test('clearing search restores the full book list', async ({ bookStorePage }) => {
     const initialCount = await bookStorePage.bookCells.count();
 
-    await bookStorePage.search(menuData.search.validTerm);
+    await bookStorePage.search(bookStoreData.search.validTerm);
     await expect(bookStorePage.bookCells.first()).toBeVisible();
     const filteredCount = await bookStorePage.bookCells.count();
 

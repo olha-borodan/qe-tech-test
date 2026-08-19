@@ -1,4 +1,4 @@
-export const menuData = {
+export const bookStoreData = {
   menuItems: ['Book Store', 'Profile', 'Login'],
   search: {
     validTerm: 'Git Pocket Guide',

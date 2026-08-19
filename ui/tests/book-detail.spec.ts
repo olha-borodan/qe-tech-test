@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/page-fixtures';
-import { menuData } from '../data/books';
+import { bookStoreData } from '../data/book-store-data';
 
 test.describe('Book Detail Page', () => {
   test.beforeEach(async ({ bookStorePage }) => {
@@ -17,11 +17,11 @@ test.describe('Book Detail Page', () => {
 
   test('book details contain the expected book', async ({ bookDetailPage }) => {
     await expect(
-      bookDetailPage.getTitle(menuData.book.title),
+      bookDetailPage.getTitle(bookStoreData.book.title),
       'book title should be displayed',
     ).toBeVisible();
     await expect(
-      bookDetailPage.getAuthor(menuData.book.author),
+      bookDetailPage.getAuthor(bookStoreData.book.author),
       'book author should be displayed',
     ).toBeVisible();
   });
