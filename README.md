@@ -17,7 +17,6 @@ api/
   clients/     thin wrappers around each API endpoint
   data/        request payloads and test credentials
   fixtures/    Playwright fixtures (authClient, bookingClient, ...)
-  schema/      response shape validation
   types/       TypeScript types for API models
   tests/       *.spec.ts test files
 
