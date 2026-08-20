@@ -1,4 +1,4 @@
-# corto-qe-assessment
+# qe-tech-test
 
 Playwright test suite covering:
 
