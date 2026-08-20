@@ -28,10 +28,8 @@ ui/
   tests/       *.spec.ts test files
 
 docs/
-  api-notes.md                    quirks and inconsistencies found in the API
-  manual-testing.md               Postman exploration done before automating
+  manual-testing.md               Postman exploration + API quirks found
   ai-assisted-testing-notes.md    notes on reviewing AI-drafted tests
-  postman/                        exported Postman collection + environment
 ```
 
 ## Setup
@@ -98,9 +96,7 @@ jobs:
 
 ## Further reading
 
-- [docs/api-notes.md](docs/api-notes.md) — inconsistencies and unexpected
-  behaviour found in the Restful-Booker API while writing these tests.
-- [docs/manual-testing.md](docs/manual-testing.md) — Postman collection and
-  environment used to explore the API by hand before automating it.
+- [docs/manual-testing.md](docs/manual-testing.md) — Postman exploration
+  done before automating, and the API quirks/inconsistencies it surfaced.
 - [docs/ai-assisted-testing-notes.md](docs/ai-assisted-testing-notes.md) —
   what an AI-drafted test got wrong and how it was reviewed.
