@@ -16,7 +16,7 @@ test.describe('Booking creation', () => {
   test('rejects a booking with a missing required field', async ({ bookingClient }) => {
     const response = await bookingClient.createBooking(BOOKING_MISSING_FIRSTNAME as Booking);
 
-    // It should be 400 rather than 500 for bad requests
-    expect(response.status(), 'create with a missing required field should return 500').toBe(500);
+    // Expected: 400 Bad Request. Actual: 500 Internal Server Error.
+    expect(response.status(), 'create with a missing required field returns 500 (400 expected)').toBe(500);
   });
 });

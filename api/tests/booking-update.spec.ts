@@ -27,8 +27,8 @@ test.describe('Booking update', () => {
   test('rejects an update without a valid token', async ({ bookingClient }) => {
     const response = await bookingClient.updateBooking(bookingid, VALID_BOOKING, 'invalid-token');
 
-    // It should be 401 rather than 403 for an invalid token
-    expect(response.status(), 'update without a valid token should return 403').toBe(403);
+    // Expected: 401 Unauthorized. Actual: 403 Forbidden.
+    expect(response.status(), 'update without a valid token returns 403 (401 expected)').toBe(403);
   });
 
   test('rejects an update with a missing required field', async ({ bookingClient }) => {
@@ -40,7 +40,7 @@ test.describe('Booking update', () => {
   test('returns 405 when updating a nonexistent booking id', async ({ bookingClient }) => {
     const response = await bookingClient.updateBooking(-1, VALID_BOOKING, token);
 
-    // It should be 404 rather than 405 for a nonexistent booking id
-    expect(response.status(), 'update of a nonexistent id should return 405').toBe(405);
+    // Expected: 404 Not Found. Actual: 405 Method Not Allowed.
+    expect(response.status(), 'update of a nonexistent id returns 405 (404 expected)').toBe(405);
   });
 });

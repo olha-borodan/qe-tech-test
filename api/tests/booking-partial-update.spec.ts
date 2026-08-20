@@ -58,14 +58,14 @@ test.describe('Booking partial update', () => {
   test('rejects a partial update without a valid token', async ({ bookingClient }) => {
     const response = await bookingClient.partialUpdateBooking(bookingid, { firstname: 'James' }, 'invalid-token');
 
-    // It should be 401 rather than 403 for an invalid token
-    expect(response.status(), 'partial update without a valid token should return 403').toBe(403);
+    // Expected: 401 Unauthorized. Actual: 403 Forbidden.
+    expect(response.status(), 'partial update without a valid token returns 403 (401 expected)').toBe(403);
   });
 
   test('returns 405 when patching a nonexistent booking id', async ({ bookingClient }) => {
     const response = await bookingClient.partialUpdateBooking(-1, { firstname: 'James' }, token);
 
-    // It should be 404 rather than 405 for a nonexistent booking id
-    expect(response.status(), 'partial update of a nonexistent id should return 405').toBe(405);
+    // Expected: 404 Not Found. Actual: 405 Method Not Allowed.
+    expect(response.status(), 'partial update of a nonexistent id returns 405 (404 expected)').toBe(405);
   });
 });

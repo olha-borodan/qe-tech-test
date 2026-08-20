@@ -17,7 +17,7 @@ test.describe('Auth', () => {
       password: 'wrong-password',
     });
 
-    // The API returns 200 and includes the reason in the response body instead of returning 401.
+    // Expected: 401 Unauthorized. Actual: 200 OK with a reason in the body.
     expect(response.status()).toBe(200);
     
     const body = await response.json();
