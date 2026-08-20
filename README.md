@@ -29,7 +29,9 @@ ui/
 
 docs/
   api-notes.md                    quirks and inconsistencies found in the API
+  manual-testing.md               Postman exploration done before automating
   ai-assisted-testing-notes.md    notes on reviewing AI-drafted tests
+  postman/                        exported Postman collection + environment
 ```
 
 ## Setup
