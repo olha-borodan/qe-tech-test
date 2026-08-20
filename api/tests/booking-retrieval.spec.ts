@@ -18,7 +18,10 @@ test.describe('Booking retrieval', () => {
 
     expect(response.status(), 'get should return 200').toBe(200);
     const body = await response.json();
-    expect(Array.isArray(body), 'response body should be an array').toBe(true);
+    expect(body.length, 'response body should not be empty').toBeGreaterThan(0);
+    body.forEach((item: unknown) =>
+      expect(item, 'each entry should be a booking id object').toEqual({ bookingid: expect.any(Number) }),
+    );
   });
 
   test('returns 404 for a nonexistent booking id', async ({ bookingClient }) => {
