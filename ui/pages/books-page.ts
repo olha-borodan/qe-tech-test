@@ -29,7 +29,6 @@ export class BooksPage {
 
   async clickFirstBook() {
     await this.bookCells.first().getByRole('link').click();
-    await this.page.waitForSelector('text=ISBN:', { timeout: 15000 });
   }
 
   async getBookCount() {

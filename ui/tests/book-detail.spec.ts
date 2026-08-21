@@ -2,9 +2,10 @@ import { test, expect } from '../fixtures/page-fixtures';
 import { bookStoreData } from '../data/book-store-data';
 
 test.describe('Book Detail Page', () => {
-  test.beforeEach(async ({ bookStorePage }) => {
+  test.beforeEach(async ({ bookStorePage, bookDetailPage }) => {
     await bookStorePage.goto();
     await bookStorePage.clickFirstBook();
+    await expect(bookDetailPage.isbnLabel, 'book detail page should have loaded').toBeVisible();
   });
 
   test('book detail labels are visible', async ({ bookDetailPage }) => {
